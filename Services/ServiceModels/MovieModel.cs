@@ -1,9 +1,8 @@
-﻿using Infrastructure;
-
-namespace Context.Entities
+﻿namespace Services.ServiceModels
 {
-    public class Movie : Entity
+    public class MovieModel
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
     }

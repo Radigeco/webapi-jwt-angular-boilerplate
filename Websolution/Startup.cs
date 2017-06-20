@@ -47,6 +47,7 @@ namespace Websolution
             var builder = new ContainerBuilder();
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             DiRegistrar.RegisterRepositories(builder);
+            DiRegistrar.RegisterServices(builder);
             var container = builder.Build();
             httpConfig.DependencyResolver = new AutofacWebApiDependencyResolver(container);
             GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
@@ -54,7 +55,7 @@ namespace Websolution
 
         private void ConfigureOAuthTokenGeneration(IAppBuilder app)
         {
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
+            app.CreatePerOwinContext(WebSolutionDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
 

@@ -1,6 +1,9 @@
-﻿namespace Repositories.Interface
+﻿using Context.Entities;
+using Infrastructure;
+
+namespace Repositories.Interface
 {
-    public interface IMovieRepository
+    public interface IMovieRepository : IGenericRepository<Movie>
     {
     }
 }

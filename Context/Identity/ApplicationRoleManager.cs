@@ -14,7 +14,7 @@ namespace Context.Identity
 
         public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
         {
-            var appRoleManager = new ApplicationRoleManager(new RoleStore<ApiRole>(context.Get<ApplicationDbContext>()));
+            var appRoleManager = new ApplicationRoleManager(new RoleStore<ApiRole>(context.Get<WebSolutionDbContext>()));
 
             return appRoleManager;
         }

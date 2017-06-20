@@ -74,7 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Migrations\201706201231190_first.cs" />
+    <Compile Include="Migrations\201706201231190_first.Designer.cs">
+      <DependentUpon>201706201231190_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="WebSolutionDbContext.cs" />
     <Compile Include="Entities\Movie.cs" />
     <Compile Include="Identity\ApiRole.cs" />
     <Compile Include="Identity\ApiUser.cs" />
@@ -86,6 +91,16 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{9E508C6F-4D8C-4FA0-AB82-70B9ADCCAB0C}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706201231190_first.resx">
+      <DependentUpon>201706201231190_first.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

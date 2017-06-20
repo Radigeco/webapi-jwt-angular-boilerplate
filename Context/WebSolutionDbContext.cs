@@ -1,13 +1,14 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using Context.Entities;
 using Context.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Context
 {
-    public class ApplicationDbContext : IdentityDbContext<ApiUser>
+    public class WebSolutionDbContext : IdentityDbContext<ApiUser>
     {
-        public ApplicationDbContext()
+        public WebSolutionDbContext()
             : base("Identity", throwIfV1Schema: false)
         {
             Configuration.ProxyCreationEnabled = false;
@@ -21,11 +22,11 @@ namespace Context
             base.OnModelCreating(modelBuilder);
         }
 
+        public DbSet<Movie> Movies { get; set; }
 
-
-        public static ApplicationDbContext Create()
+        public static WebSolutionDbContext Create()
         {
-            return new ApplicationDbContext();
+            return new WebSolutionDbContext();
         }
 
     }

@@ -15,7 +15,7 @@ namespace Context.Identity
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
-            var appDbContext = context.Get<ApplicationDbContext>();
+            var appDbContext = context.Get<WebSolutionDbContext>();
             var appUserManager = new ApplicationUserManager(new UserStore<ApiUser>(appDbContext));
             SetUserValidator(appUserManager);
             SetPasswordValidator(appUserManager);

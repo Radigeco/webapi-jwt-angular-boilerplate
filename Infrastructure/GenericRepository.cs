@@ -18,6 +18,11 @@ namespace Infrastructure
             Dbset = context.Set<T>();
         }
 
+        public virtual IQueryable<T> GetAllActive()
+        {
+            return Dbset.Where(x => x.IsDeleted == false);
+        }
+
         public virtual IQueryable<T> GetAll()
         {
             return Dbset;
@@ -38,7 +43,6 @@ namespace Infrastructure
         public virtual T Add(T entity)
         {
             Dbset.Add(entity);
-            Save();
             return entity;
         }
 
@@ -47,20 +51,17 @@ namespace Infrastructure
             var entity = GetById(id);
             entity.IsDeleted = true;
             Entities.Entry(entity).State = EntityState.Modified;
-            Save();
         }
 
         public void ForceDelete(int id)
         {
             var entity = GetById(id);
             Dbset.Remove(entity);
-            Save();
         }
 
         public virtual void Edit(T entity)
         {
             Entities.Entry(entity).State = EntityState.Modified;
-            Save();
         }
 
         public virtual void Save()

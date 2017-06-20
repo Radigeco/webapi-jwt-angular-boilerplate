@@ -6,6 +6,7 @@ namespace Infrastructure
 {
     public interface IGenericRepository<T> where T : Entity
     {
+        IQueryable<T> GetAllActive();
         IQueryable<T> GetAll();
         T GetById(int id);
         IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);

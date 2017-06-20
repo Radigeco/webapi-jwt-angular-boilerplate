@@ -157,7 +157,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Base\BaseApiController.cs" />
-    <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="DI\DIRegistrar.cs" />
     <Compile Include="Factories\ModelFactory.cs" />
     <Compile Include="Global.asax.cs">
@@ -184,6 +184,10 @@
     <ProjectReference Include="..\Security\Security.csproj">
       <Project>{392F7D13-D962-4742-A722-7CEEF47877DA}</Project>
       <Name>Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{4913EE53-6F75-41CF-9991-9265B5B770E8}</Project>
+      <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
