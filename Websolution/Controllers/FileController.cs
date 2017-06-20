@@ -37,6 +37,13 @@ namespace Websolution.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, new { Message = "Files uploaded successfully!", id = encryptedFileId });
         }
 
+        [Route("test")]
+        [HttpGet]
+        public IHttpActionResult Test()
+        {
+            return Ok("test");
+        }
+
 
         //[Route("download/{id}")]
         //[HttpGet]
