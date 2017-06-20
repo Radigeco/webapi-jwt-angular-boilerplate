@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Entities\Movie.cs" />
     <Compile Include="Identity\ApiRole.cs" />
     <Compile Include="Identity\ApiUser.cs" />
     <Compile Include="Identity\ApplicationRoleManager.cs" />
@@ -85,8 +86,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
