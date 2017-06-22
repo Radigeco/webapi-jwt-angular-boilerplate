@@ -53,8 +53,8 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="demoApp\contact\contact.controller.js" />
-    <Content Include="demoApp\contact\contact.template.html" />
+    <Content Include="demoApp\bootstrapTutorial\bootstrapTutorial.controller.js" />
+    <Content Include="demoApp\bootstrapTutorial\bootstrapTutorial.template.html" />
     <Content Include="demoApp\demoApp.js" />
     <Content Include="demoApp\home\home.controller.js" />
     <Content Include="demoApp\home\home.template.html" />

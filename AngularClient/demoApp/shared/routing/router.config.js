@@ -17,9 +17,9 @@
             })
 
             // route for the contact page
-            .when('/contact', {
-                templateUrl: 'demoApp/contact/contact.template.html',
-                controller: 'ContactController'
+            .when('/bootstrapTutorial', {
+                templateUrl: 'demoApp/bootstrapTutorial/bootstrapTutorial.template.html',
+                controller: 'BootstrapTutorialController'
             });
     })
 
