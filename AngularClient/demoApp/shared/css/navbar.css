@@ -5,6 +5,13 @@
     color: white;
 }
 
+body > header > nav > div > ul > li > a {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+}
 a {
 color:white;
 }

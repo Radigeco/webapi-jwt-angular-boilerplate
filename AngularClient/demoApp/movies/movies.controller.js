@@ -3,19 +3,59 @@
 
     angular.module('demoApp').controller('MoviesController', MoviesController);
 
-    MoviesController.$inject = ['$scope', 'DemoAppService', 'DTOptionsBuilder', 'DTColumnDefBuilder']
+    MoviesController.$inject = ['$scope', '$uibModal', 'DemoAppService']
 
-    function MoviesController($scope, DemoAppService, DTOptionsBuilder, DTColumnDefBuilder) {
+    function MoviesController($scope, $uibModal, DemoAppService) {
 
-        $scope.movies = [];
+        var vm = this;
+        vm.movies = [];
 
-        $scope.getMovies = function () {
+        vm.getMovies = function () {
             DemoAppService.getMoviesData().then(function (response) {
-                $scope.movies = response.data;
+                vm.movies = response.data;
             });
         }
 
-        $scope.getMovies();
-    }
+        vm.getMovies();
 
+        
+        vm.openDialog = function (movie, title) {
+
+            var modalInstance = $uibModal.open({
+                templateUrl: 'demoApp/movies/dialog/movieDialog.template.html',
+                controller: 'MovieDialogController',
+                controllerAs: 'vm',
+                size: 'lg',
+                resolve: {
+                    movie: function () {
+                        return movie;
+                    },
+                    title: function () {
+                        return title;
+                    }
+                }
+            });
+            modalInstance.result.then(function (response) {
+                vm.getMovies();
+            });
+        }
+
+
+        vm.addMovie = function () {
+            var title = "Add new"
+            vm.openDialog(undefined, title)
+        }
+
+        vm.editMovie = function (movie) {
+            var title = "Edit"
+            vm.openDialog(movie, title);
+        }
+
+        vm.deleteMovie = function (movieId) {
+            DemoAppService.deleteMovie(movieId).then(function (response) {
+                vm.getMovies();
+            });
+
+        }
+    }
 })();

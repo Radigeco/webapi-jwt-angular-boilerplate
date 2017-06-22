@@ -13,7 +13,7 @@
             // route for the about page
             .when('/movies', {
                 templateUrl: 'demoApp/movies/movies.template.html',
-                controller: 'MoviesController'
+                controller: 'MoviesController as vm'
             })
 
             // route for the contact page
