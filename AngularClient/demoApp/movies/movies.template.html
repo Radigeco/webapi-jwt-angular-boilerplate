@@ -1,28 +1,29 @@
 ﻿<div class="jumbotron text-center">
     <h1>Movies Page</h1>
-
-    <!--<p>{{movies}}</p>-->
 </div>
 
-<div class="container" style="padding-bottom: 15px;">
-    <div class="col-md-12">
-        <table datatable="ng" class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                </tr>
+    <div class="container" style="padding-bottom: 15px;">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary" ng-click="vm.addMovie()">Add movie</button>
+            <table datatable="ng" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
 
-            </thead>
-            <tbody>
-                <tr ng-repeat="movie in movies">
-                    <td>{{movie.id}}</td>
-                    <td>{{movie.title}}</td>
-                    <td>{{movie.description}}</td>
-                </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="movie in vm.movies" >
+                        <td ng-click="vm.editMovie(movie)">{{movie.id}}</td>
+                        <td ng-click="vm.editMovie(movie)">{{movie.title}}</td>
+                        <td ng-click="vm.editMovie(movie)">{{movie.description}}</td>
+                        <td><i class="fa fa-trash-o" aria-hidden="true" ng-click="vm.deleteMovie(movie.id)"></i></td>
+                    </tr>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>

@@ -31,7 +31,7 @@
         }
 
         var deleteMovie = function (id) {
-            return $http.delete(serviceBase + 'api/movie/delete' + id).then(function (deletedMovie) {
+            return $http.delete(serviceBase + 'api/movie/delete?id=' + id).then(function (deletedMovie) {
                 return deletedMovie;
             });
         }

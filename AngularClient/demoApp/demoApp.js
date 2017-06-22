@@ -2,7 +2,7 @@
     'use strict';
 
 
-    angular.module('demoApp', ['ngRoute', 'datatables', 'datatables.bootstrap']);
+    angular.module('demoApp', ['ngRoute', 'datatables', 'datatables.bootstrap', 'ui.bootstrap']);
 
 
 

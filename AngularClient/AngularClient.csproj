@@ -70,6 +70,8 @@
     <Content Include="demoApp\demoApp.js" />
     <Content Include="demoApp\home\home.controller.js" />
     <Content Include="demoApp\home\home.template.html" />
+    <Content Include="demoApp\movies\dialog\movieDialog.controller.js" />
+    <Content Include="demoApp\movies\dialog\movieDialog.template.html" />
     <Content Include="demoApp\movies\movies.controller.js" />
     <Content Include="demoApp\movies\movies.template.html" />
     <Content Include="demoApp\shared\css\navbar.css" />
