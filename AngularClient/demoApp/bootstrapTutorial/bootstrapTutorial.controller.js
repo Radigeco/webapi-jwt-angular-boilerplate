@@ -7,11 +7,8 @@
 
     function BootstrapTutorialController($scope) {
 
-        $scope.title = "Grid system";
-
-
+        $scope.tableTitle = "Grid system";
+        $scope.gridTitle="Grid classes";
     }
-
-
 
 })();
