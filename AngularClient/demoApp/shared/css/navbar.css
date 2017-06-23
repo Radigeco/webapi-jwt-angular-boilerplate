@@ -12,8 +12,9 @@ body > header > nav > div > ul > li > a {
 .navbar-brand {
     color: white;
 }
-a {
-color:white;
+
+.nav > li > a {
+    color: white;
 }
 
 .show-col [class^=col-] {

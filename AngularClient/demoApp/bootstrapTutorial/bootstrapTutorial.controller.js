@@ -7,6 +7,7 @@
 
     function BootstrapTutorialController($scope) {
 
+        $scope.html = "HTML5 doctype";
         $scope.tableTitle = "Grid system";
         $scope.gridTitle="Grid classes";
     }
