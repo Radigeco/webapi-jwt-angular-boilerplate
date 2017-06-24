@@ -4,6 +4,7 @@ using Context.Entities;
 using Repositories.Interface;
 using Services.Interface;
 using Services.ServiceModels;
+using AutoMapper;
 
 namespace Services.Implementation
 {
@@ -11,20 +12,29 @@ namespace Services.Implementation
     public class MovieService : IMovieService
     {
         private readonly IMovieRepository _movieRepository;
+        private readonly IMapper _mapper;
 
-        public MovieService(IMovieRepository movieRepository)
+        public MovieService(IMovieRepository movieRepository, IMapper mapper)
         {
             _movieRepository = movieRepository;
+            _mapper = mapper;
         }
 
         public IEnumerable<MovieModel> GetAll()
         {
-            return _movieRepository.GetAllActive().ToList().Select(x=> new MovieModel
+            return _movieRepository.GetAllActive().ToList().Select(x => new MovieModel
             {
                 Description = x.Description,
                 Title = x.Title,
                 Id = x.Id
             });
+        }
+
+        public IEnumerable<MovieModel> MapperGetAll()
+        {
+            var movies = _movieRepository.GetAllActive().ToList();
+            var movieModels = _mapper.Map<List<MovieModel>>(movies);
+            return movieModels;
         }
 
         public MovieModel Add(MovieModel model)

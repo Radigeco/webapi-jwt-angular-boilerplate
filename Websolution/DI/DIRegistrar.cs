@@ -1,5 +1,7 @@
 ﻿using Autofac;
+using AutoMapper;
 using Context;
+using Mapper;
 using Repositories.Implementation;
 using Services.Implementation;
 
@@ -21,6 +23,10 @@ namespace Websolution.DI
             builder.RegisterAssemblyTypes(typeof(MovieService).Assembly)
                 .Where(x => x.Namespace != null && x.Namespace.EndsWith("Services.Implementation"))
                 .AsImplementedInterfaces();
+        }
+        public static void RegisterMapper(ContainerBuilder builder)
+        {
+            builder.Register(context => MapperSetup.GetMapper()).As<IMapper>();
         }
     }
 }

@@ -18,6 +18,7 @@ using Owin;
 using Security;
 using Security.Providers;
 using Websolution.DI;
+using Mapper;
 
 namespace Websolution
 {
@@ -36,6 +37,8 @@ namespace Websolution
 
             ConfigureWebApi(httpConfig);
 
+            SetupMapper();
+
             SetupDi(httpConfig, app);
 
             app.UseWebApi(httpConfig);
@@ -48,6 +51,7 @@ namespace Websolution
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             DiRegistrar.RegisterRepositories(builder);
             DiRegistrar.RegisterServices(builder);
+            DiRegistrar.RegisterMapper(builder);
             var container = builder.Build();
             httpConfig.DependencyResolver = new AutofacWebApiDependencyResolver(container);
             GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
@@ -73,6 +77,13 @@ namespace Websolution
             };
 
             app.UseOAuthAuthorizationServer(oAuthServerOptions);
+        }
+        
+
+        public void SetupMapper()
+        {
+            MapperSetup.RegisterProfiles(MapperConfig.GetProfiles());
+
         }
 
         private void ConfigureOAuthTokenConsumption(IAppBuilder app)

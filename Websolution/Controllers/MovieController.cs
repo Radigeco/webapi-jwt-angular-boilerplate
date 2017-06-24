@@ -25,6 +25,14 @@ namespace Websolution.Controllers
         }
 
         [HttpGet]
+        [Route("mapperget")]
+        public IHttpActionResult ReadAllMapped()
+        {
+            var movies = _movieService.MapperGetAll();
+            return Ok(movies);
+        }
+
+        [HttpGet]
         [Route("get/{id}")]
         public IHttpActionResult Read(int id)
         {

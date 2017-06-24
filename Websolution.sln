@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Websolution", "Websolution\Websolution.csproj", "{60EEED62-05FC-43C1-9290-9C68EB6D0F51}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security", "Security\Security.csproj", "{392F7D13-D962-4742-A722-7CEEF47877DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{F1C310A1-3B0E-4A6B-9A19-4A3C354440CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper", "Mapper\Mapper.csproj", "{C066B689-02FF-448C-91C0-11CCE1E2B4AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{F1C310A1-3B0E-4A6B-9A19-4A3C354440CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1C310A1-3B0E-4A6B-9A19-4A3C354440CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1C310A1-3B0E-4A6B-9A19-4A3C354440CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C066B689-02FF-448C-91C0-11CCE1E2B4AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C066B689-02FF-448C-91C0-11CCE1E2B4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C066B689-02FF-448C-91C0-11CCE1E2B4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C066B689-02FF-448C-91C0-11CCE1E2B4AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

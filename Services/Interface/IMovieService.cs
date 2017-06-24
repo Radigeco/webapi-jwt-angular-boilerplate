@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Context.Entities;
 using Services.ServiceModels;
 
 namespace Services.Interface
@@ -11,5 +10,6 @@ namespace Services.Interface
         MovieModel Update(MovieModel model);
         void Delete(int id);
         MovieModel GetById(int id);
+        IEnumerable<MovieModel> MapperGetAll();
     }
 }
