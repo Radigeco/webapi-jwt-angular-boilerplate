@@ -14,3 +14,7 @@ An ASP.NET Web api 2.2 based RESTful API
   * Authentication/Authorization is done via JWT based token flow
   * For persistence T-SQL is used with Entity framework as DAL
  
+# Requirements
+* Visual studio 2012+
+* SQL Server/Express/LocalDB for persistence
+* non-IE browser
