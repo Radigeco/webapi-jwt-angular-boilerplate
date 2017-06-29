@@ -4,13 +4,13 @@
     angular.module('app.login')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$scope', '$state', 'AccountService'];
+    LoginController.$inject = ['$scope', '$state', 'AuthenticationService'];
 
-    function LoginController($scope, $state, AccountService) {
+    function LoginController($scope, $state, AuthenticationService) {
 
         var vm = this;
         vm.login = function () {
-            AccountService.login(vm.user).then(function (response) {
+            AuthenticationService.login(vm.user).then(function (response) {
                 $state.go('home');
             });
         }

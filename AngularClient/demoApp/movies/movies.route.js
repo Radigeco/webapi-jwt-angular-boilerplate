@@ -13,15 +13,15 @@
     function getStates() {
         return [
             {
-                state: 'movie',
+                state: 'movies',
                 config: {
-                    url: '/movie',
+                    url: '/movies',
                     parent: 'private',
-                    title: 'Movie',
+                    title: 'Movies',
                     views: {
                         'main-content': {
-                            templateUrl: 'demoApp/movie/movie.template.html',
-                            controller: 'MovieController',
+                            templateUrl: 'demoApp/movies/movies.template.html',
+                            controller: 'MoviesController',
                             controllerAs: 'vm'
                         }
                     }

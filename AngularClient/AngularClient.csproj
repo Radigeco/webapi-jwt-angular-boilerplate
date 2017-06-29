@@ -53,10 +53,8 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="demoApp\contact\contact.controller.js" />
-    <Content Include="demoApp\contact\contact.template.html" />
-    <Content Include="demoApp\contact\contact.module.js" />
-    <Content Include="demoApp\contact\contact.route.js" />
+    <Content Include="demoApp\bootstrapTutorial\bootstrapTutorial.module.js" />
+    <Content Include="demoApp\bootstrapTutorial\bootstrapTutorial.route.js" />
     <Content Include="demoApp\home\home.module.js" />
     <Content Include="demoApp\home\home.route.js" />
     <Content Include="demoApp\landing\landing.controller.js" />
@@ -73,9 +71,17 @@
     <Content Include="demoApp\register\register.module.js" />
     <Content Include="demoApp\register\register.route.js" />
     <Content Include="demoApp\register\register.template.html" />
+    <Content Include="demoApp\shared\blocks\authentication\authentication.module.js" />
+    <Content Include="demoApp\shared\blocks\error\error.js" />
+    <Content Include="demoApp\shared\blocks\error\error.module.js" />
+    <Content Include="demoApp\shared\blocks\error\error.service.js" />
     <Content Include="demoApp\shared\blocks\router\router-helper.provider.js" />
     <Content Include="demoApp\shared\blocks\router\router.module.js" />
+    <Content Include="demoApp\shared\blocks\session\session.js" />
+    <Content Include="demoApp\shared\blocks\session\session.module.js" />
     <Content Include="demoApp\shared\core\404.template.html" />
+    <Content Include="demoApp\shared\core\core.config.js" />
+    <Content Include="demoApp\shared\core\core.constants.js" />
     <Content Include="demoApp\shared\core\core.module.js" />
     <Content Include="demoApp\bootstrapTutorial\bootstrapTutorial.controller.js" />
     <Content Include="demoApp\bootstrapTutorial\bootstrapTutorial.template.html" />
@@ -94,7 +100,7 @@
     <Content Include="demoApp\shared\directives\directives.module.js" />
     <Content Include="demoApp\shared\directives\passwordMatch.directive.js" />
     <Content Include="demoApp\shared\routing\router.config.js" />
-    <Content Include="demoApp\shared\services\account.service.js" />
+    <Content Include="demoApp\shared\blocks\authentication\authentication.service.js" />
     <Content Include="demoApp\shared\services\demoApp.service.js" />
     <Content Include="index.html" />
     <Content Include="packages.config" />

@@ -9,7 +9,7 @@
         'app.login',
         'app.home',
         'app.movies',
-        'app.contact',
+        'app.bootstrapTutorial',
         'app.directives'
     ]);
 

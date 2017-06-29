@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('demoApp').controller('BootstrapTutorialController', BootstrapTutorialController);
+    angular.module('app.bootstrapTutorial').controller('BootstrapTutorialController', BootstrapTutorialController);
 
     BootstrapTutorialController.$inject = ['$scope']
 

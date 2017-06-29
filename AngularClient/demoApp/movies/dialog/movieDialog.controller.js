@@ -1,4 +1,4 @@
-﻿angular.module('demoApp').controller('MovieDialogController', function ($uibModalInstance, DemoAppService, movie, title) {
+﻿angular.module('app.movies').controller('MovieDialogController', function ($uibModalInstance, DemoAppService, movie, title) {
     var vm = this;
 
     vm.title = title;

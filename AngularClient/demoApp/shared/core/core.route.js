@@ -26,20 +26,21 @@
                     abstract: true,                    
                     templateUrl: '/demoApp/shared/core/private.layout.template.html',
                     resolve: {
-                        //auth: ["$q", "authentication", "session", function ($q,authentication, session) {
-                        //    //console.log('private.resolve.auth' + authentication.isLoggedIn());
+                        auth: ["$q", '$state', "AuthenticationService", "session", function ($q, $state, AuthenticationService, session) {
 
-                        //    var deferred = $q.defer();
+                            var deferred = $q.defer();
 
-                        //    if (authentication.isLoggedIn()) {
-                        //        var user = session.getUser();
-                        //        deferred.resolve(user);
-                        //    } else {
-                        //        deferred.reject('AUTH_REQUIRED');
-                        //    }
+                            if (AuthenticationService.isLoggedIn()) {
+                                var user = session.getUser();
+                                deferred.resolve(user);
+                            } else {
+                                $state.go('login');
+                                deferred.reject('AUTH_REQUIRED');
 
-                        //    return deferred.promise;
-                        //}],
+                            }
+
+                            return deferred.promise;
+                        }],
                     }
                 }
             },
@@ -49,14 +50,14 @@
                      abstract: true,                    
                      templateUrl: '/demoApp/shared/core/public.layout.template.html',
                      resolve: {
-                         //auth: ["$q", "authentication", function ($q,authentication) {
-                         //    //console.log('public');                             
-                         //    var deferred = $q.defer();
+                         auth: ["$q", function ($q) {
+                             //console.log('public');                             
+                             var deferred = $q.defer();
 
-                         //    deferred.resolve(null);
+                             deferred.resolve(null);
 
-                         //    return deferred.promise;
-                         //}]                        
+                             return deferred.promise;
+                         }]                        
                      }
                  }
              },

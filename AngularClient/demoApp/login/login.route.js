@@ -35,10 +35,10 @@
                 config: {
                     url: '/logout',
                     template: 'nothing...',
-                    //controller: function ($scope, $state, $http, $window, authentication) {                        
-                    //    authentication.logOut();
-                    //    $state.go('index');
-                    //},
+                    controller: function ($scope, $state, $http, $window, AuthenticationService) {                        
+                        AuthenticationService.logOut();
+                        $state.go('index');
+                    },
                     title: 'Logout',
                     settings: {
                         group: 'logoutGroup'
