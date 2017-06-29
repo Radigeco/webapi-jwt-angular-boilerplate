@@ -99,6 +99,7 @@
     <Content Include="demoApp\shared\css\navbar.css" />
     <Content Include="demoApp\shared\directives\directives.module.js" />
     <Content Include="demoApp\shared\directives\passwordMatch.directive.js" />
+    <Content Include="demoApp\shared\images\movie.jpg" />
     <Content Include="demoApp\shared\routing\router.config.js" />
     <Content Include="demoApp\shared\blocks\authentication\authentication.service.js" />
     <Content Include="demoApp\shared\services\demoApp.service.js" />
