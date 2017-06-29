@@ -77,6 +77,8 @@
     <Content Include="demoApp\shared\blocks\router\router.module.js" />
     <Content Include="demoApp\shared\core\404.template.html" />
     <Content Include="demoApp\shared\core\core.module.js" />
+    <Content Include="demoApp\bootstrapTutorial\bootstrapTutorial.controller.js" />
+    <Content Include="demoApp\bootstrapTutorial\bootstrapTutorial.template.html" />
     <Content Include="demoApp\demoApp.js" />
     <Content Include="demoApp\home\home.controller.js" />
     <Content Include="demoApp\home\home.template.html" />
@@ -97,6 +99,7 @@
     <Content Include="index.html" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
+    <Content Include="README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

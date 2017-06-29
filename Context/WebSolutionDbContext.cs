@@ -9,7 +9,7 @@ namespace Context
     public class WebSolutionDbContext : IdentityDbContext<ApiUser>
     {
         public WebSolutionDbContext()
-            : base("Identity", throwIfV1Schema: false)
+            : base("Movies", throwIfV1Schema: false)
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
