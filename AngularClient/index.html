@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
-<html ng-app="demoApp">
+<html>
 <head>
+    <base href="/">
     <!-- CSS loading-->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
     <link href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet" />
@@ -9,49 +10,80 @@
     <link href="node_modules/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.min.css" rel="stylesheet" />
     <link href="demoApp/shared/css/navbar.css" rel="stylesheet" />
    
+</head>
+
+<body>
+    <!--Main content that changes based on route-->
+    <div ui-view></div>
+
     <!-- Libraries -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="node_modules/angular-animate/angular-animate.min.js"></script>
     <script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
     <script src="node_modules/angular-datatables/dist/angular-datatables.js"></script>
     <script src="node_modules/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
-    <!-- App files -->
-    <script src="demoApp/demoApp.js"></script>
-    <script src="demoApp/shared/routing/router.config.js"></script>
-    <script src="demoApp/shared/services/demoApp.service.js"></script>
-    <script src="demoApp/movies/movies.controller.js"></script>
+
+    <!-- Router config-->
+    <script src="demoApp/shared/blocks/router/router.module.js"></script>
+    <script src="demoApp/shared/blocks/router/router-helper.provider.js"></script>
+
+    <!-- Core module -->
+    <script src="demoApp/shared/core/core.module.js"></script>
+    <script src="demoApp/shared/core/core.run.js"></script>
+    <script src="demoApp/shared/core/core.route.js"></script>
+
+
+    <!-- Landing module -->
+    <script src="demoApp/landing/landing.module.js"></script>
+    <script src="demoApp/landing/landing.controller.js"></script>
+    <script src="demoApp/landing/landing.route.js"></script>
+
+
+    <!-- Register module -->
+    <script src="demoApp/register/register.module.js"></script>
+    <script src="demoApp/register/register.controller.js"></script>
+    <script src="demoApp/register/register.route.js"></script>
+   
+
+    <!-- Login module -->
+    <script src="demoApp/login/login.module.js"></script>
+    <script src="demoApp/login/login.controller.js"></script>
+    <script src="demoApp/login/login.route.js"></script>
+
+
+    <!-- Home module -->
+    <script src="demoApp/home/home.module.js"></script>
     <script src="demoApp/home/home.controller.js"></script>
+    <script src="demoApp/home/home.route.js"></script>
+
+    <!-- Movies module -->
+    <script src="demoApp/movies/movies.module.js"></script>
+    <script src="demoApp/movies/movies.controller.js"></script>
+    <script src="demoApp/movies/movies.route.js"></script>
+
+    <!-- Contact module -->
+    <script src="demoApp/contact/contact.module.js"></script>
     <script src="demoApp/contact/contact.controller.js"></script>
-    <script src="demoApp/movies/dialog/movieDialog.controller.js"></script>
+    <script src="demoApp/contact/contact.route.js"></script>
+
+    <!-- Custom directives -->
+    <script src="demoApp/shared/directives/directives.module.js"></script>
+    <script src="demoApp/shared/directives/passwordMatch.directive.js"></script>
+    <script src="demoApp/shared/services/account.service.js"></script>
+ 
+
+    <script src="demoApp/demoApp.js"></script>
+    <script src="demoApp/shared/services/demoApp.service.js"></script>
+ 
 
 
 
-</head>
 
-<body>
-    <!-- Navigation -->
-    <header>
-        <nav class="bs-nav navbar navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Demo angular application</a>
-                </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#!/"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="#!/movies"><i class="fa fa-film"></i> Movies</a></li>
-                    <li><a href="#!/contact"><i class="fa fa-comment"></i> Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
 
-    <div id="main">
-        <!-- Loading specific views -->
-        <div ng-view></div>
-    </div>
+ 
 </body>
 </html>

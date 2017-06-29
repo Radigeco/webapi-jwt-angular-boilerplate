@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('demoApp').controller('ContactController', ContactController);
+    angular.module('app.contact').controller('ContactController', ContactController);
 
     ContactController.$inject = ['$scope']
 

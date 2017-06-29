@@ -36,6 +36,8 @@
             });
         }
 
+
+
         DemoServiceFactory.getMoviesData = getMoviesData;
         DemoServiceFactory.addNewMovie = addNewMovie;
         DemoServiceFactory.updateMovie = updateMovie;

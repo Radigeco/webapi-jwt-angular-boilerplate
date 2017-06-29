@@ -2,8 +2,19 @@
     'use strict';
 
 
-    angular.module('demoApp', ['ngRoute', 'datatables', 'datatables.bootstrap', 'ui.bootstrap']);
+    angular.module('demoApp', [
+        'app.core',
+        'app.landing',
+        'app.register',
+        'app.login',
+        'app.home',
+        'app.movies',
+        'app.contact',
+        'app.directives'
+    ]);
 
+
+    angular.bootstrap(document, ['demoApp']);
 
 
 })();
