@@ -29,6 +29,9 @@
                 "username": userModel.username,
                 "password": userModel.password
             }).then(function (response) {
+                if (response.data.success == false) {
+                    return response.data.reason;
+                }
                 if (response.status == 200 && response.data.accessToken) {
                     session.setAccessToken(response.data.accessToken);
                     if (response.data.refreshToken) {
