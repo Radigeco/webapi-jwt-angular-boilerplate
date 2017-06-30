@@ -12,7 +12,8 @@
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
         </div>
 
-        <div ng-if="vm.error" style="color: red; padding-bottom: 15px;">Username or password is incorrect</div>
+        <div ng-if="vm.error && vm.errorMessage == 'Bad Request'" style="color: red; padding-bottom: 15px;">Username or password is incorrect</div>
+        <div ng-if="vm.error && vm.errorMessage != 'Bad Request'" style="color: red; padding-bottom: 15px;">{{vm.errorMessage}}</div>
         <div class="form-actions">
             <button type="submit" class="btn btn-primary">Login</button>
         </div>

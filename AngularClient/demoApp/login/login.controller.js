@@ -10,13 +10,17 @@
 
         var vm = this;
         vm.error = false;
+        vm.errorMessage = "";
+
         vm.login = function () {
             AuthenticationService.login(vm.user).then(function (response) {
-                if (response === "Bad Request") {
+                if (response.data.success === false) {
                     vm.error = true;
+                    vm.errorMessage = response.data.reason;
                 }
                 else {
                     vm.error = false;
+                    vm.errorMessage = "";
                     $state.go('home');
                 }
             });
