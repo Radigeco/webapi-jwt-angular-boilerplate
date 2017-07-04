@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module("demoApp").factory("DemoAppService", DemoService);
+    angular.module("app.movies").factory("DemoAppService", DemoService);
 
 
     DemoService.$inject = ['$http'];
@@ -13,7 +13,9 @@
         var DemoServiceFactory = {};
 
         var getMoviesData = function () {
-            return $http.get(serviceBase + 'api/movie/get').then(function (movies) {
+            return $http.get(serviceBase + 'api/movie/get', {
+                skipAuthorization: true
+            }).then(function (movies) {
                 return movies;
             });
         }
@@ -35,6 +37,8 @@
                 return deletedMovie;
             });
         }
+
+
 
         DemoServiceFactory.getMoviesData = getMoviesData;
         DemoServiceFactory.addNewMovie = addNewMovie;

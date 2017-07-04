@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('demoApp').controller('MoviesController', MoviesController);
+    angular.module('app.movies').controller('MoviesController', MoviesController);
 
     MoviesController.$inject = ['$scope', '$uibModal', 'DemoAppService']
 

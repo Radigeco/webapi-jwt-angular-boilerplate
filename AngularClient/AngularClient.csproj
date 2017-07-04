@@ -53,6 +53,36 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="demoApp\bootstrapTutorial\bootstrapTutorial.module.js" />
+    <Content Include="demoApp\bootstrapTutorial\bootstrapTutorial.route.js" />
+    <Content Include="demoApp\home\home.module.js" />
+    <Content Include="demoApp\home\home.route.js" />
+    <Content Include="demoApp\landing\landing.controller.js" />
+    <Content Include="demoApp\landing\landing.module.js" />
+    <Content Include="demoApp\landing\landing.route.js" />
+    <Content Include="demoApp\landing\landing.template.html" />
+    <Content Include="demoApp\login\login.controller.js" />
+    <Content Include="demoApp\login\login.module.js" />
+    <Content Include="demoApp\login\login.route.js" />
+    <Content Include="demoApp\login\login.template.html" />
+    <Content Include="demoApp\movies\movies.module.js" />
+    <Content Include="demoApp\movies\movies.route.js" />
+    <Content Include="demoApp\register\register.controller.js" />
+    <Content Include="demoApp\register\register.module.js" />
+    <Content Include="demoApp\register\register.route.js" />
+    <Content Include="demoApp\register\register.template.html" />
+    <Content Include="demoApp\shared\blocks\authentication\authentication.module.js" />
+    <Content Include="demoApp\shared\blocks\error\error.js" />
+    <Content Include="demoApp\shared\blocks\error\error.module.js" />
+    <Content Include="demoApp\shared\blocks\error\error.service.js" />
+    <Content Include="demoApp\shared\blocks\router\router-helper.provider.js" />
+    <Content Include="demoApp\shared\blocks\router\router.module.js" />
+    <Content Include="demoApp\shared\blocks\session\session.js" />
+    <Content Include="demoApp\shared\blocks\session\session.module.js" />
+    <Content Include="demoApp\shared\core\404.template.html" />
+    <Content Include="demoApp\shared\core\core.config.js" />
+    <Content Include="demoApp\shared\core\core.constants.js" />
+    <Content Include="demoApp\shared\core\core.module.js" />
     <Content Include="demoApp\bootstrapTutorial\bootstrapTutorial.controller.js" />
     <Content Include="demoApp\bootstrapTutorial\bootstrapTutorial.template.html" />
     <Content Include="demoApp\demoApp.js" />
@@ -62,8 +92,16 @@
     <Content Include="demoApp\movies\dialog\movieDialog.template.html" />
     <Content Include="demoApp\movies\movies.controller.js" />
     <Content Include="demoApp\movies\movies.template.html" />
+    <Content Include="demoApp\shared\core\core.route.js" />
+    <Content Include="demoApp\shared\core\core.run.js" />
+    <Content Include="demoApp\shared\core\private.layout.template.html" />
+    <Content Include="demoApp\shared\core\public.layout.template.html" />
     <Content Include="demoApp\shared\css\navbar.css" />
+    <Content Include="demoApp\shared\directives\directives.module.js" />
+    <Content Include="demoApp\shared\directives\passwordMatch.directive.js" />
+    <Content Include="demoApp\shared\images\movie.jpg" />
     <Content Include="demoApp\shared\routing\router.config.js" />
+    <Content Include="demoApp\shared\blocks\authentication\authentication.service.js" />
     <Content Include="demoApp\shared\services\demoApp.service.js" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
@@ -82,6 +120,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
