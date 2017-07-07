@@ -79,6 +79,9 @@
     <Compile Include="Entity.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="Helpers\MultiPartFileHelper.cs" />
+    <Compile Include="Helpers\Tasty\TastyPagination.cs" />
+    <Compile Include="Helpers\Tasty\TastyRequestWrapper.cs" />
+    <Compile Include="Helpers\Tasty\TastyResponseWrapper.cs" />
     <Compile Include="IGenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
