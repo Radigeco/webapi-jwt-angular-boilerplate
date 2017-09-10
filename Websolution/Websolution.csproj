@@ -192,6 +192,10 @@
       <Project>{AB0BF5C7-99A2-4B3E-8189-56EB4FFED4A0}</Project>
       <Name>Context</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Identity\Identity.csproj">
+      <Project>{82FA2484-2AA3-4E3E-9400-2B686574CA0F}</Project>
+      <Name>Identity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
       <Project>{9E508C6F-4D8C-4FA0-AB82-70B9ADCCAB0C}</Project>
       <Name>Infrastructure</Name>

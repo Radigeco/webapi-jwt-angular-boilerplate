@@ -5,22 +5,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Context.Identity
+namespace Identity
 {
     public class ApiUser : IdentityUser
     {
-        [Required]
+        [Microsoft.Build.Framework.Required]
         [MaxLength(100)]
         public string FirstName { get; set; }
 
-        [Required]
+        [Microsoft.Build.Framework.Required]
         [MaxLength(100)]
         public string LastName { get; set; }
 
-        [Required]
+        [Microsoft.Build.Framework.Required]
         public byte Level { get; set; }
 
-        [Required]
+        [Microsoft.Build.Framework.Required]
         public DateTime JoinDate { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApiUser> manager, string authenticationType)

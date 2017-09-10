@@ -1,19 +1,16 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using Context.Entities;
-using Context.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Context
 {
-    public class WebSolutionDbContext : IdentityDbContext<ApiUser>
+    public class WebSolutionDbContext : DbContext
     {
         public WebSolutionDbContext()
-            : base("Movies", throwIfV1Schema: false)
+            : base("Movies")
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
-            RequireUniqueEmail = true;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -23,11 +20,6 @@ namespace Context
         }
 
         public DbSet<Movie> Movies { get; set; }
-
-        public static WebSolutionDbContext Create()
-        {
-            return new WebSolutionDbContext();
-        }
 
     }
 }

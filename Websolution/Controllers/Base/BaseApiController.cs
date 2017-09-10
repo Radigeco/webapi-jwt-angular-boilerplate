@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 using System.Web.Http;
-using Context.Identity;
+using Identity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Websolution.Factories;

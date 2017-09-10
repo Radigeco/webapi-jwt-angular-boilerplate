@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Context.Identity
+namespace Identity
 {
     public class ApiRole : IdentityRole
     {

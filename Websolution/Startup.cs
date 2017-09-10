@@ -6,8 +6,7 @@ using System.Reflection;
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
-using Context;
-using Context.Identity;
+using Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.DataHandler.Encoder;
@@ -59,7 +58,7 @@ namespace Websolution
 
         private void ConfigureOAuthTokenGeneration(IAppBuilder app)
         {
-            app.CreatePerOwinContext(WebSolutionDbContext.Create);
+            app.CreatePerOwinContext(IdentityContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
 
