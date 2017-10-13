@@ -2,8 +2,9 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using Infrastructure.Interface;
 
-namespace Infrastructure
+namespace Infrastructure.Implementation
 {
 
     public abstract class GenericRepository<T> : IGenericRepository<T>

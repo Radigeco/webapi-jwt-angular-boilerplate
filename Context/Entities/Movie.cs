@@ -1,4 +1,5 @@
 ﻿using Infrastructure;
+using Infrastructure.Implementation;
 
 namespace Context.Entities
 {

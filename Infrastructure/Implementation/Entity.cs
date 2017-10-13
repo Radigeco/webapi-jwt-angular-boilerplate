@@ -1,4 +1,4 @@
-﻿namespace Infrastructure
+﻿namespace Infrastructure.Implementation
 {
     public class Entity
     {

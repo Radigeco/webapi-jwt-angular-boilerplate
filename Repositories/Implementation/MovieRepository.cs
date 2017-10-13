@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using Context.Entities;
 using Infrastructure;
+using Infrastructure.Implementation;
 using Repositories.Interface;
 
 namespace Repositories.Implementation

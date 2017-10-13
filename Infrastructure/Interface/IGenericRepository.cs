@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
+using Infrastructure.Implementation;
 
-namespace Infrastructure
+namespace Infrastructure.Interface
 {
     public interface IGenericRepository<T> where T : Entity
     {
