@@ -43,7 +43,8 @@ namespace Services.Implementation
             {
                 IsDeleted = false,
                 Description = model.Description,
-                Title = model.Title
+                Title = model.Title,
+                MovieTypeId = model.MovieTypeId
             };
             _movieRepository.Add(entity);
             _movieRepository.Save();
@@ -59,6 +60,7 @@ namespace Services.Implementation
         {
             var entity = _movieRepository.GetById(model.Id);
             entity.Title = model.Title;
+            entity.MovieTypeId = model.MovieTypeId;
             entity.Description = model.Description;
             _movieRepository.Edit(entity);
             _movieRepository.Save();

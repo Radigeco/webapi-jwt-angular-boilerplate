@@ -11,11 +11,18 @@ namespace Websolution.DI
     {
         public static void RegisterRepositories(ContainerBuilder builder)
         {
+            builder.RegisterType<ContextWrapper>().As<IContextWrapper>();
             //registers all repositories inside Repositories.Implementation namespace, manual registration can also be done
             builder.RegisterAssemblyTypes(typeof(MovieRepository).Assembly)
              .Where(x => x.Namespace != null && x.Namespace.EndsWith("Repositories.Implementation"))
-             .AsImplementedInterfaces().WithParameter("context", new WebSolutionDbContext());
+             .AsImplementedInterfaces();
+            
 
+        }
+
+        public static WebSolutionDbContext GetContext()
+        {
+            return new WebSolutionDbContext();
         }
 
         public static void RegisterServices(ContainerBuilder builder)

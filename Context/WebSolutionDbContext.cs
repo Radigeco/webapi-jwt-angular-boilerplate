@@ -4,7 +4,6 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Threading;
 using Context.Entities;
-using Infrastructure;
 using Infrastructure.Interface;
 
 namespace Context
@@ -75,6 +74,7 @@ namespace Context
         }
 
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<MovieType> MovieTypes { get; set; }
 
     }
 }

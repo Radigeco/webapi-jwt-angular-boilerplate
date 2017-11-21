@@ -2,21 +2,28 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using Context;
 using Infrastructure.Interface;
 
 namespace Infrastructure.Implementation
 {
 
-    public abstract class GenericRepository<T> : IGenericRepository<T>
+    public abstract class GenericRepository<T> : IGenericRepository<T>, IDisposable
           where T : Entity
     {
         protected DbContext Entities;
         protected readonly IDbSet<T> Dbset;
 
-        protected GenericRepository(DbContext context)
+        protected GenericRepository()
         {
-            Entities = context;
-            Dbset = context.Set<T>();
+            Entities = new WebSolutionDbContext();
+            Dbset = Entities.Set<T>();
+        }
+
+        protected GenericRepository(IContextWrapper wrapper)
+        {
+            Entities = wrapper.GetContext();
+            Dbset = Entities.Set<T>();
         }
 
         public virtual IQueryable<T> GetAllActive()
@@ -68,6 +75,11 @@ namespace Infrastructure.Implementation
         public virtual void Save()
         {
             Entities.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            Entities.Dispose();
         }
     }
 }

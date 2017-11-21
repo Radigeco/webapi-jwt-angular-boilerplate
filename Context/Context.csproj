@@ -72,9 +72,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201709101942107_1.cs" />
-    <Compile Include="Migrations\201709101942107_1.Designer.cs">
-      <DependentUpon>201709101942107_1.cs</DependentUpon>
+    <Compile Include="ContextWrapper.cs" />
+    <Compile Include="Entities\MovieType.cs" />
+    <Compile Include="Entities\TrackableEntity.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="IContextWrapper.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="ITrackableEntity.cs" />
+    <Compile Include="Migrations\201711212303339_first.cs" />
+    <Compile Include="Migrations\201711212303339_first.Designer.cs">
+      <DependentUpon>201711212303339_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WebSolutionDbContext.cs" />
@@ -86,14 +93,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
-      <Project>{9E508C6F-4D8C-4FA0-AB82-70B9ADCCAB0C}</Project>
-      <Name>Infrastructure</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709101942107_1.resx">
-      <DependentUpon>201709101942107_1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711212303339_first.resx">
+      <DependentUpon>201711212303339_first.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

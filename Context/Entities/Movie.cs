@@ -1,11 +1,11 @@
-﻿using Infrastructure;
-using Infrastructure.Implementation;
-
-namespace Context.Entities
+﻿namespace Context.Entities
 {
-    public class Movie : Entity
+    public class Movie : TrackableEntity
     {
         public string Title { get; set; }
         public string Description { get; set; }
+
+        public int MovieTypeId { get; set; }
+        public MovieType MovieType { get; set; }
     }
 }

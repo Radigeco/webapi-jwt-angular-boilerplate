@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using Infrastructure.Interface;
 
-namespace Infrastructure.Implementation
+namespace Context.Entities
 {
     public abstract class TrackableEntity : Entity, ITrackableEntity
     {

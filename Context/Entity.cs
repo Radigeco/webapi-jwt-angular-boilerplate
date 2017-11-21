@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Implementation
+﻿namespace Context
 {
     public class Entity
     {

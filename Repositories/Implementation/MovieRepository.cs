@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using Context;
 using Context.Entities;
 using Infrastructure;
 using Infrastructure.Implementation;
@@ -8,7 +9,7 @@ namespace Repositories.Implementation
 {
     public class MovieRepository : GenericRepository<Movie>, IMovieRepository
     {
-        public MovieRepository(DbContext context) : base(context)
+        public MovieRepository(IContextWrapper contextWrapper) : base(contextWrapper)
         {
         }
     }
