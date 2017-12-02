@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Ambient.Context.Interfaces;
 using Context.Entities;
 using Repositories.Interface;
 using Services.Interface;
@@ -13,80 +14,100 @@ namespace Services.Implementation
     {
         private readonly IMovieRepository _movieRepository;
         private readonly IMapper _mapper;
+        private readonly IDbContextScopeFactory _contextScopeFactory;
 
-        public MovieService(IMovieRepository movieRepository, IMapper mapper)
+        public MovieService(IMovieRepository movieRepository, IMapper mapper, IDbContextScopeFactory contextScopeFactory)
         {
             _movieRepository = movieRepository;
             _mapper = mapper;
+            _contextScopeFactory = contextScopeFactory;
         }
 
         public IEnumerable<MovieModel> GetAll()
         {
-            return _movieRepository.GetAllActive().ToList().Select(x => new MovieModel
+            using (var scope = _contextScopeFactory.CreateReadOnly())
             {
-                Description = x.Description,
-                Title = x.Title,
-                Id = x.Id
-            });
+                return _movieRepository.GetAllActive().ToList().Select(x => new MovieModel
+                {
+                    Description = x.Description,
+                    Title = x.Title,
+                    Id = x.Id
+                });
+            }
         }
 
         public IEnumerable<MovieModel> MapperGetAll()
         {
-            var movies = _movieRepository.GetAllActive().ToList();
-            var movieModels = _mapper.Map<List<MovieModel>>(movies);
-            return movieModels;
+            using (var scope = _contextScopeFactory.CreateReadOnly())
+            {
+                var movies = _movieRepository.GetAllActive().ToList();
+                var movieModels = _mapper.Map<List<MovieModel>>(movies);
+                return movieModels;
+            }
         }
 
         public MovieModel Add(MovieModel model)
         {
-            var entity = new Movie
+            using (var scope = _contextScopeFactory.Create())
             {
-                IsDeleted = false,
-                Description = model.Description,
-                Title = model.Title,
-                MovieTypeId = model.MovieTypeId
-            };
-            _movieRepository.Add(entity);
-            _movieRepository.Save();
-            return new MovieModel
-            {
-                Description = entity.Description,
-                Title = entity.Title,
-                Id = entity.Id
-            };
+                var entity = new Movie
+                {
+                    IsDeleted = false,
+                    Description = model.Description,
+                    Title = model.Title,
+                    MovieTypeId = model.MovieTypeId
+                };
+                _movieRepository.Add(entity);
+                _movieRepository.Save();
+                return new MovieModel
+                {
+                    Description = entity.Description,
+                    Title = entity.Title,
+                    Id = entity.Id
+                };
+            }
         }
 
         public MovieModel Update(MovieModel model)
         {
-            var entity = _movieRepository.GetById(model.Id);
-            entity.Title = model.Title;
-            entity.MovieTypeId = model.MovieTypeId;
-            entity.Description = model.Description;
-            _movieRepository.Edit(entity);
-            _movieRepository.Save();
-            return new MovieModel
+            using (var scope = _contextScopeFactory.Create())
             {
-                Description = entity.Description,
-                Title = entity.Title,
-                Id = entity.Id
-            };
+                var entity = _movieRepository.GetById(model.Id);
+                entity.Title = model.Title;
+                entity.MovieTypeId = model.MovieTypeId;
+                entity.Description = model.Description;
+                _movieRepository.Edit(entity);
+                _movieRepository.Save();
+                return new MovieModel
+                {
+                    Description = entity.Description,
+                    Title = entity.Title,
+                    Id = entity.Id
+                };
+            }
         }
 
         public void Delete(int id)
         {
-            _movieRepository.Delete(id);
-            _movieRepository.Save();
+            using (var scope = _contextScopeFactory.Create())
+            {
+                _movieRepository.Delete(id);
+                _movieRepository.Save();
+            }
         }
 
         public MovieModel GetById(int id)
         {
-            var entity = _movieRepository.GetById(id);
-            return new MovieModel
+            using (var scope = _contextScopeFactory.CreateReadOnly())
             {
-                Title = entity.Title,
-                Description = entity.Description,
-                Id = entity.Id
-            };
+                var entity = _movieRepository.GetById(id);
+                return new MovieModel
+                {
+                    Title = entity.Title,
+                    Description = entity.Description,
+                    Id = entity.Id
+                };
+            }
         }
     }
 }

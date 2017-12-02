@@ -51,6 +51,7 @@ namespace Websolution
             DiRegistrar.RegisterRepositories(builder);
             DiRegistrar.RegisterServices(builder);
             DiRegistrar.RegisterMapper(builder);
+            DiRegistrar.RegisterAmbientContext(builder);
             var container = builder.Build();
             httpConfig.DependencyResolver = new AutofacWebApiDependencyResolver(container);
             GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);

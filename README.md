@@ -13,6 +13,8 @@ An ASP.NET Web api 2.2 based RESTful API
   * Web API 2.2 based RESTful API
   * Authentication/Authorization is done via JWT based token flow
   * For persistence T-SQL is used with Entity framework as ORM
+  * Special thanks to mehdime : https://github.com/mehdime/DbContextScope for writing a wonderful ambient context wrapper for entity framework
+
  
 # Requirements
 * Visual studio 2012+

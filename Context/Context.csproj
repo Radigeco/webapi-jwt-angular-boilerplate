@@ -72,11 +72,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContextWrapper.cs" />
     <Compile Include="Entities\MovieType.cs" />
     <Compile Include="Entities\TrackableEntity.cs" />
     <Compile Include="Entity.cs" />
-    <Compile Include="IContextWrapper.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="ITrackableEntity.cs" />
     <Compile Include="Migrations\201711212303339_first.cs" />
@@ -84,7 +82,7 @@
       <DependentUpon>201711212303339_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="WebSolutionDbContext.cs" />
+    <Compile Include="MoviesDbContext.cs" />
     <Compile Include="Entities\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

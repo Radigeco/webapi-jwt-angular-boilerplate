@@ -33,6 +33,7 @@
     <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.6.1.0\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
@@ -44,6 +45,10 @@
     <Compile Include="ServiceModels\MovieModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ambient.Context\Ambient.Context.csproj">
+      <Project>{42009450-A1ED-4A8A-AB51-F358AF2ED611}</Project>
+      <Name>Ambient.Context</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Context\Context.csproj">
       <Project>{AB0BF5C7-99A2-4B3E-8189-56EB4FFED4A0}</Project>
       <Name>Context</Name>

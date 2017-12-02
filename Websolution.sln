@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Websolution", "Websolution\Websolution.csproj", "{60EEED62-05FC-43C1-9290-9C68EB6D0F51}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper", "Mapper\Mapper.csproj", "{C066B689-02FF-448C-91C0-11CCE1E2B4AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity", "Identity\Identity.csproj", "{82FA2484-2AA3-4E3E-9400-2B686574CA0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ambient.Context", "Ambient.Context\Ambient.Context.csproj", "{42009450-A1ED-4A8A-AB51-F358AF2ED611}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,8 +65,15 @@ Global
 		{82FA2484-2AA3-4E3E-9400-2B686574CA0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82FA2484-2AA3-4E3E-9400-2B686574CA0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82FA2484-2AA3-4E3E-9400-2B686574CA0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42009450-A1ED-4A8A-AB51-F358AF2ED611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42009450-A1ED-4A8A-AB51-F358AF2ED611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42009450-A1ED-4A8A-AB51-F358AF2ED611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42009450-A1ED-4A8A-AB51-F358AF2ED611}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10FEC359-0FE2-4594-B7CE-34513F2FCD3F}
 	EndGlobalSection
 EndGlobal

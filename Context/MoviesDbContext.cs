@@ -8,9 +8,9 @@ using Infrastructure.Interface;
 
 namespace Context
 {
-    public class WebSolutionDbContext : DbContext
+    public class MoviesDbContext : DbContext
     {
-        public WebSolutionDbContext()
+        public MoviesDbContext()
             : base("Movies")
         {
             Configuration.ProxyCreationEnabled = false;

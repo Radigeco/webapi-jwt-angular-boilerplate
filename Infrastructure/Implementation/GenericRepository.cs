@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using Ambient.Context.Interfaces;
 using Context;
 using Infrastructure.Interface;
 
@@ -11,46 +12,51 @@ namespace Infrastructure.Implementation
     public abstract class GenericRepository<T> : IGenericRepository<T>, IDisposable
           where T : Entity
     {
-        protected DbContext Entities;
-        protected readonly IDbSet<T> Dbset;
+        protected readonly IAmbientDbContextLocator ContextLocator;
 
-        protected GenericRepository()
+
+        protected GenericRepository(IAmbientDbContextLocator contextLocator)
         {
-            Entities = new WebSolutionDbContext();
-            Dbset = Entities.Set<T>();
+            ContextLocator = contextLocator;
         }
 
-        protected GenericRepository(IContextWrapper wrapper)
+        protected DbContext Context()
         {
-            Entities = wrapper.GetContext();
-            Dbset = Entities.Set<T>();
+            var context = ContextLocator.Get();
+            return context;
+        }
+
+        protected IDbSet<T> Set()
+        {
+            var context = Context();
+            return context.Set<T>();
         }
 
         public virtual IQueryable<T> GetAllActive()
         {
-            return Dbset.Where(x => x.IsDeleted == false);
+            return Set().Where(x => x.IsDeleted == false);
         }
 
         public virtual IQueryable<T> GetAll()
         {
-            return Dbset;
+            return Set();
         }
 
         public T GetById(int id)
         {
-            return Dbset.FirstOrDefault(x => x.Id == id);
+            return Set().FirstOrDefault(x => x.Id == id);
         }
 
         public IQueryable<T> FindBy(Expression<Func<T, bool>> predicate)
         {
 
-            IQueryable<T> query = Dbset.Where(predicate);
+            IQueryable<T> query = Set().Where(predicate);
             return query;
         }
 
         public virtual T Add(T entity)
         {
-            Dbset.Add(entity);
+            Set().Add(entity);
             return entity;
         }
 
@@ -58,28 +64,28 @@ namespace Infrastructure.Implementation
         {
             var entity = GetById(id);
             entity.IsDeleted = true;
-            Entities.Entry(entity).State = EntityState.Modified;
+            Context().Entry(entity).State = EntityState.Modified;
         }
 
         public void ForceDelete(int id)
         {
             var entity = GetById(id);
-            Dbset.Remove(entity);
+            Set().Remove(entity);
         }
 
         public virtual void Edit(T entity)
         {
-            Entities.Entry(entity).State = EntityState.Modified;
+            Context().Entry(entity).State = EntityState.Modified;
         }
 
         public virtual void Save()
         {
-            Entities.SaveChanges();
+            Context().SaveChanges();
         }
 
         public void Dispose()
         {
-            Entities.Dispose();
+            Context().Dispose();
         }
     }
 }

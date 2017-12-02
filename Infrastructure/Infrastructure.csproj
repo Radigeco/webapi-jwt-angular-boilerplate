@@ -81,6 +81,7 @@
     <Compile Include="Helpers\Tasty\TastyPagination.cs" />
     <Compile Include="Helpers\Tasty\TastyRequestWrapper.cs" />
     <Compile Include="Helpers\Tasty\TastyResponseWrapper.cs" />
+    <Compile Include="MoviesScopeLocator.cs" />
     <Compile Include="Interface\IGenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -89,6 +90,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ambient.Context\Ambient.Context.csproj">
+      <Project>{42009450-a1ed-4a8a-ab51-f358af2ed611}</Project>
+      <Name>Ambient.Context</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Context\Context.csproj">
       <Project>{AB0BF5C7-99A2-4B3E-8189-56EB4FFED4A0}</Project>
       <Name>Context</Name>
