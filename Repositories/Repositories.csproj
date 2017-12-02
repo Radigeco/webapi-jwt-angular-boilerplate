@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementation\MovieRepository.cs" />
+    <Compile Include="Implementation\MovieTypeRepository.cs" />
     <Compile Include="Interface\IMovieRepository.cs" />
+    <Compile Include="Interface\IMovieTypeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

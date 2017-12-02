@@ -11,5 +11,6 @@ namespace Services.Interface
         void Delete(int id);
         MovieModel GetById(int id);
         IEnumerable<MovieModel> MapperGetAll();
+        IEnumerable<MovieJoinModel> GetJoined();
     }
 }

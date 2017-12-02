@@ -24,6 +24,15 @@ namespace Websolution.Controllers
             return Ok(movies);
         }
 
+
+        [HttpGet]
+        [Route("getjoined")]
+        public IHttpActionResult ReadAllJoined()
+        {
+            var movies = _movieService.GetJoined();
+            return Ok(movies);
+        }
+
         [HttpGet]
         [Route("mapperget")]
         public IHttpActionResult ReadAllMapped()

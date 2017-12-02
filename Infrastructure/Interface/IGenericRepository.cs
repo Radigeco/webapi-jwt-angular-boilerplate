@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using Context;
-using Infrastructure.Implementation;
 
 namespace Infrastructure.Interface
 {
@@ -17,5 +17,7 @@ namespace Infrastructure.Interface
         void ForceDelete(int id);
         void Edit(T entity);
         void Save();
+        IDbSet<T> Set();
+        DbContext Context();
     }
 }

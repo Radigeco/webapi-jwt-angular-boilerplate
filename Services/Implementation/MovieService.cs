@@ -13,14 +13,16 @@ namespace Services.Implementation
     public class MovieService : IMovieService
     {
         private readonly IMovieRepository _movieRepository;
+        private readonly IMovieTypeRepository _movieTypeRepository;
         private readonly IMapper _mapper;
         private readonly IDbContextScopeFactory _contextScopeFactory;
 
-        public MovieService(IMovieRepository movieRepository, IMapper mapper, IDbContextScopeFactory contextScopeFactory)
+        public MovieService(IMovieRepository movieRepository, IMapper mapper, IDbContextScopeFactory contextScopeFactory, IMovieTypeRepository movieTypeRepository)
         {
             _movieRepository = movieRepository;
             _mapper = mapper;
             _contextScopeFactory = contextScopeFactory;
+            _movieTypeRepository = movieTypeRepository;
         }
 
         public IEnumerable<MovieModel> GetAll()
@@ -43,6 +45,31 @@ namespace Services.Implementation
                 var movies = _movieRepository.GetAllActive().ToList();
                 var movieModels = _mapper.Map<List<MovieModel>>(movies);
                 return movieModels;
+            }
+        }
+
+        public IEnumerable<MovieJoinModel> GetJoined()
+        {
+            using (var scope = _contextScopeFactory.Create())
+            {
+                var movies = _movieRepository.Set();
+                var movieTypes = _movieTypeRepository.Set();
+                var joined = from movie in movies
+                             join movieType in movieTypes
+                                 on movie.MovieTypeId equals movieType.Id
+                             select new MovieJoinModel
+                             {
+                                 Id = movie.Id,
+                                 MovieTypeModel = new MovieTypeModel
+                                 {
+                                     Id = movieType.Id
+                                 },
+                                 MovieTypeId = movieType.Id,
+                                 Description = movie.Description,
+                                 Title = movie.Title
+                             };
+
+                return joined.ToList();
             }
         }
 

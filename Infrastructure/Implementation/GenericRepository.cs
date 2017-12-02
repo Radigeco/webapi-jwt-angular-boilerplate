@@ -9,7 +9,7 @@ using Infrastructure.Interface;
 namespace Infrastructure.Implementation
 {
 
-    public abstract class GenericRepository<T> : IGenericRepository<T>, IDisposable
+    public abstract class GenericRepository<T> : IGenericRepository<T>
           where T : Entity
     {
         protected readonly IAmbientDbContextLocator ContextLocator;
@@ -20,13 +20,13 @@ namespace Infrastructure.Implementation
             ContextLocator = contextLocator;
         }
 
-        protected DbContext Context()
+        public DbContext Context()
         {
             var context = ContextLocator.Get();
             return context;
         }
 
-        protected IDbSet<T> Set()
+        public IDbSet<T> Set()
         {
             var context = Context();
             return context.Set<T>();
@@ -83,9 +83,5 @@ namespace Infrastructure.Implementation
             Context().SaveChanges();
         }
 
-        public void Dispose()
-        {
-            Context().Dispose();
-        }
     }
 }

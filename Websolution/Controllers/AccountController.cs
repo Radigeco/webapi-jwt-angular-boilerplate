@@ -48,7 +48,7 @@ namespace Websolution.Controllers
             TokenResponseModel tokenResponse = (TokenResponseModel)JsonConvert.DeserializeObject(jsonMessage, typeof(TokenResponseModel));
             //Expire date is 5 minutes less then it should be, so the client authenticates earlier then
             Int64 expireDate = DateTime.Now.ToEpochTime() + tokenResponse.ExpiresIn - 300;
-            return Ok(new { success = true, tokenResponse.AccessToken, tokenResponse.ExpiresIn, tokenResponse.TokenType, issueDate = DateTime.Now.ToEpochTime(), expireDate,tokenResponse.RefreshToken });
+            return Ok(new { success = true, tokenResponse.AccessToken, tokenResponse.ExpiresIn, tokenResponse.TokenType, issueDate = DateTime.Now.ToEpochTime(), expireDate, tokenResponse.RefreshToken });
         }
 
         [Authorize]
