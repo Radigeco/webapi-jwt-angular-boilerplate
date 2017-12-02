@@ -14,7 +14,7 @@ namespace Websolution.Controllers
         [AllowAnonymous]
         [Route("badrequesthandling")]
         [HttpGet]
-        public IHttpActionResult HitApi()
+        public IHttpActionResult BadRequestApi()
         {
             // Create a request using a URL that can receive a post. 
             WebRequest request = WebRequest.Create("https://developers.google.com/vision/android/barcodes-overview");
