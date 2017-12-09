@@ -12,6 +12,7 @@ using Identity;
 using Microsoft.AspNet.Identity;
 using Newtonsoft.Json;
 using Thinktecture.IdentityModel.Extensions;
+using Utilities;
 using Websolution.Controllers.Base;
 using Websolution.Models;
 
@@ -79,7 +80,7 @@ namespace Websolution.Controllers
         [Route("user/{username}")]
         public async Task<IHttpActionResult> GetUserByName(string username)
         {
-            string userName = Base64UrlEncoder.Decode(username);
+            string userName = Base64Helper.Base64Decode(username);
             ApiUser user = await AppUserManager.FindByNameAsync(userName);
 
             if (user != null)
